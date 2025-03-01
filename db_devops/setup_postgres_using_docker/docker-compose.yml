@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  postgres-db-docker-service:
+    image: postgres:latest
+    container_name: postgres-db-docker-container
+    restart: always
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydatabase
+    ports:
+      - 5431:5432                           # external_port (localhost) : internal_port (docker)
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+    driver: local
