@@ -34,3 +34,11 @@ volumes:
 networks:
   ollama_network:
     driver: bridge
+
+
+# access the webui at http://localhost:3000
+# access the ollama api at http://localhost:11434
+
+# To pull a model, run the following command in the ollama container:
+#  docker exec -it ollama ollama pull <model_name>
+#  docker exec -it ollama ollama pull mistral
